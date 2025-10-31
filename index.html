@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="id" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Society: Dampak Sosial Informatika</title>
+    <!-- Memuat Tailwind CSS CDN untuk styling yang cepat dan responsif -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Memuat ikon dari Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        // Konfigurasi Tailwind CSS untuk tema warna futuristik
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#4f46e5',   /* Indigo 600 (Ungu) */
+                        'secondary': '#3b82f6', /* Blue 500 (Biru Muda) */
+                        'bg-light': '#f0f9ff',  /* Blue 50 (Sangat Terang) */
+                        'card-bg': '#ffffff',   /* Putih untuk Kartu */
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* CSS Tambahan untuk Kustomisasi dan Animasi */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Sedikit off-white */
+        }
+        .header-gradient {
+            background-image: linear-gradient(135deg, #4f46e5 0%, #3b82f6 100%);
+        }
+        /* Efek animasi saat scroll (tersembunyi secara default) */
+        .section-card {
+            transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+            transform: translateY(20px);
+            opacity: 0;
+            will-change: transform, opacity;
+        }
+        /* Kelas yang ditambahkan JS saat elemen terlihat */
+        .section-card.is-visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        .quiz-option:hover {
+            background-color: #e0e7ff; /* Hover effect */
+        }
+    </style>
+</head>
+
+<body class="text-gray-800">
+
+    <!-- Navbar/Navigasi -->
+    <!-- Navigasi tetap di atas (fixed) dan responsif -->
+    <nav class="sticky top-0 z-50 bg-white shadow-lg backdrop-blur-sm bg-opacity-90">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo/Judul -->
+                <div class="flex-shrink-0 text-xl font-bold text-primary">
+                    Digital Society
+                </div>
+                <!-- Menu Navigasi -->
+                <div class="hidden sm:ml-6 sm:flex sm:space-x-4">
+                    <a href="#beranda" class="nav-link text-gray-600 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition duration-300">Beranda</a>
+                    <a href="#positif" class="nav-link text-gray-600 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition duration-300">Manfaat</a>
+                    <a href="#negatif" class="nav-link text-gray-600 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition duration-300">Tantangan</a>
+                    <a href="#kuis" class="nav-link bg-primary text-white hover:bg-secondary px-3 py-2 rounded-md text-sm font-medium transition duration-300 shadow-md">Kuis Interaktif</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Konten Utama -->
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+
+        <!-- 1. Beranda (Home) -->
+        <section id="beranda" class="min-h-screen pt-20 flex items-center justify-center">
+            <div class="text-center p-8 sm:p-12 rounded-3xl header-gradient text-white shadow-2xl section-card">
+                <!-- Ikon visual menarik -->
+                <div class="mb-6 flex justify-center">
+                    <i data-lucide="compass" class="w-16 h-16 text-white transform hover:rotate-6 transition duration-500"></i>
+                </div>
+                <h2 class="text-4xl sm:text-5xl font-extrabold mb-4 leading-tight">
+                    Menguak Dampak Sosial Informatika
+                </h2>
+                <p class="text-xl sm:text-2xl font-light mb-6">
+                    Materi Kelas XII SMA: Memahami Jejak Digital Kita di Masyarakat.
+                </p>
+                <p class="max-w-3xl mx-auto mb-8 text-lg">
+                    Informatika bukan hanya tentang kode dan komputer, tetapi juga tentang bagaimana teknologi mengubah cara kita hidup, berinteraksi, belajar, dan bekerja. Ini adalah cermin masyarakat digital kita.
+                </p>
+                <a href="#positif" class="inline-block bg-white text-primary px-8 py-3 rounded-full font-bold text-lg hover:bg-gray-100 transition duration-300 shadow-lg nav-link">
+                    Mulai Jelajahi
+                </a>
+            </div>
+        </section>
+
+        <!-- 2. Dampak Positif (Manfaat) -->
+        <section id="positif" class="py-20 sm:py-24">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-center mb-12 text-primary">
+                Sisi Terang: Manfaat Informatika
+            </h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                
+                <!-- Kartu Manfaat 1: Komunikasi & Interaksi -->
+                <div class="p-6 bg-card-bg rounded-xl shadow-lg border-t-4 border-secondary section-card">
+                    <i data-lucide="message-circle-code" class="w-8 h-8 text-secondary mb-3"></i>
+                    <h3 class="text-xl font-bold mb-2 text-gray-900">1. Komunikasi Tanpa Batas</h3>
+                    <p class="text-gray-600">
+                        Informatika memungkinkan komunikasi real-time melalui video call, pesan instan, dan media sosial, menghubungkan individu lintas benua dan memperkuat hubungan sosial.
+                    </p>
+                </div>
+                
+                <!-- Kartu Manfaat 2: Efisiensi Kerja & Otomatisasi -->
+                <div class="p-6 bg-card-bg rounded-xl shadow-lg border-t-4 border-secondary section-card">
+                    <i data-lucide="trending-up" class="w-8 h-8 text-secondary mb-3"></i>
+                    <h3 class="text-xl font-bold mb-2 text-gray-900">2. Peningkatan Efisiensi</h3>
+                    <p class="text-gray-600">
+                        Otomatisasi, analisis data, dan sistem informasi manajemen mempercepat proses kerja di berbagai industri, menghemat waktu, biaya, dan mengurangi human error.
+                    </p>
+                </div>
+                
+                <!-- Kartu Manfaat 3: E-Learning & Akses Pendidikan -->
+                <div class="p-6 bg-card-bg rounded-xl shadow-lg border-t-4 border-secondary section-card">
+                    <i data-lucide="graduation-cap" class="w-8 h-8 text-secondary mb-3"></i>
+                    <h3 class="text-xl font-bold mb-2 text-gray-900">3. Revolusi E-Learning</h3>
+                    <p class="text-gray-600">
+                        Pendidikan menjadi lebih mudah diakses melalui platform online, MOOCs (Massive Open Online Courses), dan materi digital, memungkinkan belajar kapan saja dan di mana saja.
+                    </p>
+                </div>
+                
+                <!-- Kartu Manfaat 4: Ekonomi Digital -->
+                <div class="p-6 bg-card-bg rounded-xl shadow-lg border-t-4 border-secondary section-card">
+                    <i data-lucide="line-chart" class="w-8 h-8 text-secondary mb-3"></i>
+                    <h3 class="text-xl font-bold mb-2 text-gray-900">4. Pertumbuhan Ekonomi Digital</h3>
+                    <p class="text-gray-600">
+                        Menciptakan model bisnis baru (e-commerce, fintech), membuka lapangan kerja baru (developer, data scientist), dan mendorong inovasi kewirausahaan.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 3. Dampak Negatif (Tantangan) -->
+        <section id="negatif" class="py-20 sm:py-24 bg-bg-light">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-center mb-12 text-primary">
+                Sisi Bayangan: Tantangan & Risiko
+            </h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                
+                <!-- Kartu Negatif 1: Kesenjangan Digital -->
+                <div class="p-6 bg-card-bg rounded-xl shadow-lg border-t-4 border-primary section-card">
+                    <i data-lucide="split" class="w-8 h-8 text-primary mb-3"></i>
+                    <h3 class="text-xl font-bold mb-2 text-gray-900">1. Kesenjangan Digital (Digital Divide)</h3>
+                    <p class="text-gray-600">
+                        Perbedaan akses dan kemampuan menggunakan teknologi antara kelompok masyarakat dapat memperburuk ketidaksetaraan ekonomi dan sosial yang sudah ada.
+                    </p>
+                </div>
+                
+                <!-- Kartu Negatif 2: Cyberbullying & Kejahatan Siber -->
+                <div class="p-6 bg-card-bg rounded-xl shadow-lg border-t-4 border-primary section-card">
+                    <i data-lucide="shield-off" class="w-8 h-8 text-primary mb-3"></i>
+                    <h3 class="text-xl font-bold mb-2 text-gray-900">2. Kejahatan dan Perundungan Siber</h3>
+                    <p class="text-gray-600">
+                        Anonimitas di dunia maya memicu perilaku agresif (cyberbullying) serta maraknya penipuan, peretasan, dan penyebaran informasi palsu (hoax).
+                    </p>
+                </div>
+                
+                <!-- Kartu Negatif 3: Privasi Data & Pengawasan -->
+                <div class="p-6 bg-card-bg rounded-xl shadow-lg border-t-4 border-primary section-card">
+                    <i data-lucide="eye-off" class="w-8 h-8 text-primary mb-3"></i>
+                    <h3 class="text-xl font-bold mb-2 text-gray-900">3. Krisis Privasi Data</h3>
+                    <p class="text-gray-600">
+                        Pengumpulan data pribadi secara masif oleh perusahaan dan risiko kebocoran data menantang hak individu atas privasi dan keamanan informasinya.
+                    </p>
+                </div>
+                
+                <!-- Kartu Negatif 4: Kecanduan dan Kesehatan Mental -->
+                <div class="p-6 bg-card-bg rounded-xl shadow-lg border-t-4 border-primary section-card">
+                    <i data-lucide="user-x" class="w-8 h-8 text-primary mb-3"></i>
+                    <h3 class="text-xl font-bold mb-2 text-gray-900">4. Kecanduan Digital & Isolasi</h3>
+                    <p class="text-gray-600">
+                        Penggunaan perangkat dan media sosial yang berlebihan dapat menyebabkan kecanduan, masalah tidur, hingga isolasi sosial dari interaksi tatap muka.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 4. Interaktif Quiz (Kuis) -->
+        <section id="kuis" class="py-20 sm:py-24">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-center mb-12 text-primary">
+                Uji Pemahaman: Kuis Digital Society
+            </h2>
+
+            <div class="max-w-3xl mx-auto bg-card-bg p-8 rounded-3xl shadow-2xl border border-gray-100">
+                <div id="quiz-container" class="space-y-6">
+                    <!-- Pertanyaan Kuis Akan Dimuat di Sini oleh JavaScript -->
+                    <p class="text-center text-lg text-gray-500">Memuat Kuis...</p>
+                </div>
+
+                <div class="flex justify-center mt-8">
+                    <!-- Tombol Kirim kini defaultnya terlihat (opacity-100) -->
+                    <button id="submit-quiz" class="bg-primary text-white px-8 py-3 rounded-full font-bold text-lg hover:bg-indigo-700 transition duration-300 shadow-xl">
+                        Kirim Jawaban
+                    </button>
+                </div>
+
+                <!-- Area Hasil Kuis -->
+                <div id="quiz-result" class="mt-10 p-6 bg-bg-light border-l-4 border-secondary rounded-lg text-center hidden">
+                    <h3 class="text-2xl font-bold mb-2 text-primary">Hasil Kuis Anda</h3>
+                    <p id="score-text" class="text-xl text-gray-700"></p>
+                    <p id="review-text" class="text-sm text-gray-500 mt-4"></p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 5. Footer -->
+    <footer id="footer" class="bg-gray-900 text-white py-10">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="mb-4">
+                <p class="text-lg font-semibold">Projek Informatika Kelas XII</p>
+                <p class="text-sm text-gray-400">Dibuat dengan semangat untuk masyarakat digital yang cerdas.</p>
+            </div>
+            <div class="text-xs text-gray-500 space-y-1">
+                <p>Sumber Referensi Utama: Kurikulum Informatika SMA & Jurnal Akademik Terkait.</p>
+                <p>Kontak: <a href="mailto:info@digitalsociety.com" class="hover:text-primary transition duration-300">info@digitalsociety.com</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // INISIALISASI JAVASCRIPT
+        
+        // 1. Array Pertanyaan Kuis
+        const quizQuestions = [
+            {
+                question: "Apa istilah untuk perbedaan akses dan kemampuan menggunakan teknologi informasi antara kelompok masyarakat?",
+                options: ["Digital Native", "Digital Divide", "Digital Footprint", "E-Literasi"],
+                answer: "Digital Divide"
+            },
+            {
+                question: "Salah satu dampak negatif informatika yang terkait dengan penyebaran informasi palsu adalah...",
+                options: ["E-commerce", "E-learning", "Hoax", "E-Government"],
+                answer: "Hoax"
+            },
+            {
+                question: "Apa manfaat utama informatika bagi sektor pendidikan?",
+                options: ["Meningkatkan kecanduan game", "Memudahkan proses impor barang", "Memungkinkan E-Learning dan akses sumber belajar global", "Menyebabkan cyberbullying"],
+                answer: "Memungkinkan E-Learning dan akses sumber belajar global"
+            },
+            {
+                question: "Fenomena di mana algoritma menyajikan informasi yang cenderung sama atau disetujui pengguna, yang dapat memperkuat pandangan ekstrem, disebut...",
+                options: ["Digital Detox", "Algorithmic Bias", "Echo Chamber", "Viral Marketing"],
+                answer: "Echo Chamber"
+            },
+            {
+                question: "Undang-undang yang paling relevan di Indonesia untuk melindungi data pribadi dan privasi pengguna adalah...",
+                options: ["UU ITE", "UU Hak Cipta", "UU Perlindungan Data Pribadi (UU PDP)", "UU Kesehatan"],
+                answer: "UU Perlindungan Data Pribadi (UU PDP)"
+            }
+        ];
+
+        let userAnswers = {}; // Objek untuk menyimpan jawaban pengguna
+        const quizContainer = document.getElementById('quiz-container');
+        const submitButton = document.getElementById('submit-quiz');
+        const quizResult = document.getElementById('quiz-result');
+        const scoreText = document.getElementById('score-text');
+        const reviewText = document.getElementById('review-text');
+
+        // Fungsi untuk merender (menampilkan) kuis ke HTML
+        function renderQuiz() {
+            quizContainer.innerHTML = ''; // Kosongkan container
+            quizQuestions.forEach((q, index) => {
+                const questionNumber = index + 1;
+                const questionHtml = `
+                    <div class="p-4 sm:p-6 bg-bg-light rounded-xl shadow-inner border-l-4 border-primary quiz-question section-card">
+                        <p class="text-lg font-semibold mb-3 text-primary">Pertanyaan ${questionNumber}:</p>
+                        <p class="mb-4">${q.question}</p>
+                        <div class="space-y-2">
+                            ${q.options.map(option => `
+                                <label class="flex items-center p-3 rounded-lg cursor-pointer quiz-option transition duration-200">
+                                    <input type="radio" name="question-${index}" value="${option}" class="w-4 h-4 text-primary focus:ring-primary border-gray-300 mr-3" onclick="handleAnswerChange(${index}, '${option}')">
+                                    <span class="text-sm sm:text-base">${option}</span>
+                                </label>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+                quizContainer.innerHTML += questionHtml;
+            });
+            
+            // Karena tombol sudah terlihat, tidak perlu mengubah opacity lagi di sini
+        }
+
+        // Fungsi yang dipanggil saat pengguna memilih jawaban
+        function handleAnswerChange(questionIndex, selectedOption) {
+            userAnswers[questionIndex] = selectedOption;
+        }
+
+        // Fungsi untuk menghitung dan menampilkan hasil kuis
+        function submitQuiz() {
+            // Cek apakah semua pertanyaan sudah dijawab (opsional, tapi disarankan)
+            if (Object.keys(userAnswers).length !== quizQuestions.length) {
+                // Di lingkungan nyata, ini akan menjadi modal, bukan alert
+                alert("Mohon jawab semua pertanyaan sebelum mengirim!");
+                return;
+            }
+
+            let score = 0;
+            let correctCount = 0;
+
+            quizQuestions.forEach((q, index) => {
+                // Periksa apakah jawaban pengguna ada dan benar
+                if (userAnswers[index] === q.answer) {
+                    score += 100 / quizQuestions.length;
+                    correctCount++;
+                }
+            });
+
+            const finalScore = Math.round(score);
+            const totalQuestions = quizQuestions.length;
+
+            scoreText.innerHTML = `Anda menjawab **${correctCount}** dari **${totalQuestions}** pertanyaan dengan benar. Skor Anda: **${finalScore}**`;
+            
+            // Berikan umpan balik (feedback)
+            if (finalScore >= 80) {
+                reviewText.textContent = "Hebat! Anda memiliki pemahaman yang sangat baik tentang dampak sosial informatika. Teruslah belajar dan terapkan etika digital!";
+            } else if (finalScore >= 60) {
+                reviewText.textContent = "Bagus! Pemahaman Anda cukup baik. Coba tinjau kembali bagian Dampak Negatif dan Kesenjangan Digital.";
+            } else {
+                reviewText.textContent = "Jangan berkecil hati! Coba pelajari lagi bagian Dampak Positif dan Negatif dengan lebih teliti, kemudian ulangi kuis ini.";
+            }
+
+            // Tampilkan hasil kuis
+            quizResult.classList.remove('hidden');
+            
+            // Gulir otomatis ke hasil kuis
+            quizResult.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            
+            // Nonaktifkan tombol kirim setelah dikirim
+            submitButton.disabled = true;
+            submitButton.classList.add('opacity-50', 'cursor-not-allowed');
+        }
+
+        // Event listener untuk tombol kirim
+        submitButton.addEventListener('click', submitQuiz);
+
+
+        // 2. Logika Scroll ke Bagian (Smooth Navigation)
+        document.querySelectorAll('.nav-link').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                document.querySelector(targetId).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        
+        // 3. Logika Scroll Animation (Intersection Observer)
+        const observerOptions = {
+            root: null, // viewport
+            rootMargin: '0px',
+            threshold: 0.1 // Ketika 10% elemen terlihat
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    // Hentikan pengawasan setelah elemen terlihat
+                    // observer.unobserve(entry.target); // dinonaktifkan agar animasi bisa dipicu lagi jika perlu
+                }
+            });
+        }, observerOptions);
+
+        // Amati semua elemen yang perlu dianimasikan saat scroll
+        function setupIntersectionObserver() {
+            document.querySelectorAll('.section-card, .quiz-question').forEach(card => {
+                observer.observe(card);
+            });
+        }
+        
+        // Panggil fungsi renderQuiz, setupIntersectionObserver, dan inisialisasi ikon Lucide segera
+        // karena script berada di akhir body, elemen DOM sudah tersedia.
+        renderQuiz();
+        setupIntersectionObserver();
+        lucide.createIcons();
+    </script>
+</body>
+</html>
+
